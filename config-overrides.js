@@ -11,6 +11,10 @@ module.exports = override(
 	  	['@com'] 	: resolve('src/common'),
 	  	['@cpt'] 	: resolve('src/components'),
         ['@tp'] 	: resolve('src/components/template'),
+        ['@antd'] 	: resolve('src/components/antd'),
+        ['@mu'] 	: resolve('src/components/material-ui'),
+        ['@es'] 	: resolve('src/components/echarts'),
+        
 	  	['@cpx'] 	: resolve('src/components-x'),
 	  	
 	  	['@assets'] : resolve('src/assets'),
