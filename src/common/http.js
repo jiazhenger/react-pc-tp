@@ -71,7 +71,6 @@ const coreRequest = (url, param, action, defined) => {
 	let promise;
 	let configs = config({
 		type	: UD.type,
-		upload	: UD.upload,
 		noToken	: UD.noToken,
 		api		: api
 	})
