@@ -10,7 +10,7 @@ module.exports = override(
 		['@'] 		: resolve('src'),
 	  	['@com'] 	: resolve('src/common'),
 	  	['@cpt'] 	: resolve('src/components'),
-		['@tp'] 	: resolve('src/components/template'),
+        ['@tp'] 	: resolve('src/components/template'),
 	  	['@cpx'] 	: resolve('src/components-x'),
 	  	
 	  	['@assets'] : resolve('src/assets'),
