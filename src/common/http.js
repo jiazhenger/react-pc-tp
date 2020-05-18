@@ -348,9 +348,9 @@ const paging = (_this,api,option)=>{
 //	if(!$fn.isObject(opt.param)){ opt.param = {} }
 	const { current, pageSize } = opt.param || {}
 	const param = {
-		currentPage: current || 1, 					// 当前页
+        ...opt.param,
+		currentPage: current || 1, 		// 当前页
 		showCount: pageSize || 10,		// 每页显示多少条数据
-		...opt.param
 	}
 	delete param.current
 	delete param.pageSize
