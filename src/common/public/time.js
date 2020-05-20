@@ -1,9 +1,14 @@
-var formatNumber = function(n) { 
+import $fn from './fn'
+
+const formatNumber = function(n) {
     n = n.toString()
     return n[1] ? n : '0' + n
 }
-var join = function(arr,split){
+const join = function(arr,split){
 	return arr.map(formatNumber).join(split)
+}
+const getTime = function(time){
+
 }
 export default {
 	full: function(time){
@@ -18,20 +23,26 @@ export default {
 	    }
 	},
 	format: function(time,option){
-		var opt = { split:'-', lang:'en', type:'ymd' }
-		
-		Object.assign(opt,option || {});
-		
-		var t = this.full(time);
-		var str = '--'
-		
-		if(!isNaN(time*1)){
-			switch(opt.type){
+		var opt = { s:'-', l:'en', t:'ymd', ...option }
+		var str = null
+        var date = null
+        if($fn.isString(time)){
+            date = new Date(time).getTime()
+        }else{
+            date = time
+        }
+
+		if(!isNaN(parseInt(date))){
+			var t = this.full(date);
+			switch(opt.t){
 				case 'full':
-					str = join([t.year,t.month,t.day],opt.split) + ' ' + join([t.h,t.m,t.s],':')
+					str = join([t.year,t.month,t.day],opt.s) + ' ' + join([t.h,t.m,t.s],':')
+					break;
+				case 'ymd-hm':
+					str = join([t.year,t.month,t.day],opt.s) + ' ' + join([t.h,t.m],':') + ':00'
 					break;
 				case 'ymd':
-					str = opt.lang == 'zh' ? t.year+'年'+t.month+'月'+t.day+'日' : join([t.year,t.month,t.day],opt.split)
+					str = opt.l === 'zh' ? t.year+'年'+t.month+'月'+t.day+'日' : join([t.year,t.month,t.day],opt.s)
 					break;
 				case 'hms':
 					str = join([t.h,t.m,t.s],':')
