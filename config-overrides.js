@@ -10,7 +10,7 @@ module.exports = override(
 		['@'] 		: resolve('src'),
 	  	['@com'] 	: resolve('src/common'),
 	  	['@cpt'] 	: resolve('src/components'),
-        ['@tp'] 	: resolve('src/components/template'),
+        ['@tp'] 	: resolve('src/template'),
         ['@antd'] 	: resolve('src/components/antd'),
         ['@mu'] 	: resolve('src/components/material-ui'),
         ['@es'] 	: resolve('src/components/echarts'),
@@ -34,6 +34,6 @@ module.exports = override(
 	// 自定义主题
 	addLessLoader({
 		javascriptEnabled: true,
-		modifyVars: { '@primary-color': '#EF7158' },
+		modifyVars: { '@primary-color': '#3385ff' },
 	})
 )
