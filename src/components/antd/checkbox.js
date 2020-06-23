@@ -19,7 +19,7 @@ export default class Index extends React.Component {
 	clear = () => this.setValue(false)
 	
 	render(){
-		const  { size, disabled, onClick, loading } = this.props
+		const  { size, disabled, loading } = this.props
 		const value = this.state.value === undefined ? this.props.value : this.state.value
 		return (
 			<Checkbox
