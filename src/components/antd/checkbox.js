@@ -7,11 +7,11 @@ export default class Index extends React.Component {
 		
 	}
 	onChange = e => {
-		const { onChange, name } = this.props
-		this.setState({ value: e.target.checked },()=>{
-			let rs = this.state.value ? false : true
-			onChange && onChange( name ? { [name]: rs } : rs )
-		})
+		// const { onChange, name } = this.props
+		// this.setState({ value: e.target.checked },()=>{
+		// 	let rs = this.state.value ? false : true
+		// 	onChange && onChange( name ? { [name]: rs } : rs )
+		// })
 	}
 	
 	setValue = value => this.setState({ value })
