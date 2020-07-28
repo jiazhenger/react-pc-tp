@@ -79,6 +79,14 @@ const _ = {
 	setTitle(text){ window.document.title = text },
 	// 深拷贝
 	copy(data){ return JSON.parse(JSON.stringify(data)) },
+	// 添加 className
+	css(className, defaultValue){ 
+		if(arguments.length === 1) {
+			return className ? className : ''
+		}else if(arguments.length === 2){
+			return className ? className : 'defaultValue'
+		}
+	},
 	// ========================================================================  设置 model
 	async setModel(_this,keyValue,option){
 		const opt = {
