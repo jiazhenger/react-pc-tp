@@ -51,7 +51,7 @@ const _ = {
 		const hash = window.location.search || window.location.hash
 		let stack = {}
 		if(hash.indexOf('?') !== -1){
-			const search = hash.split('?')
+			let search = hash.split('?')
 			search = search[1].split('&')
 			search.forEach(function(v,i){
 				const s = v.split('=')
