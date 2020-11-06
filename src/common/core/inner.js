@@ -10,12 +10,12 @@ const _ = {
 			loading.style.display = 'none'
 		}
 	},
-	async toast(msg, delay){
+	async toast(msg, callback, delay){
 		delay = delay || 1500
 		const toast = document.querySelector('#jzer-toast')
 		toast.style.display = 'block'
 		toast.querySelector('.jzer-toast-msg').innerHTML = msg
-		setTimeout(()=>{ toast.style.display = 'none' },delay)
+		setTimeout(()=>{ toast.style.display = 'none'; callback && callback() },delay)
 	},
 	// ======================================================================== 刷新跳转
 	// 登录后跳转
@@ -43,6 +43,14 @@ const _ = {
 		}
 		await _this.setState({ [opt.model]: {..._this.state[opt.model], ...keyValue } })
 		return _this.state[opt.model]
+	},
+	async setModels(_this,keyValue,option){
+		const opt = {
+			model : 'model',
+			...option
+		}
+		_this[opt.model] = {..._this[opt.model], ...keyValue }
+		return _this[opt.model]
 	},
 	// 绑定值
 	val(v){return this.isValid(v) ? v : '--'},
