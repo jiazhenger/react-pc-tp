@@ -346,4 +346,6 @@ const paging = (_this,api,option)=>{
 		})
 	})
 }
-export default { submit, pull, paging }
+const index = { submit, pull, paging }
+
+export default index

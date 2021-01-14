@@ -7,10 +7,12 @@ import DataLoading from '@tp/data-loading'
 // ===================================================================== antd 汉化
 
 // ===================================================================== 二级路由
-export default ( ) => (
+ const  Index = () => (
 	<>
 		<HashRouter children={<AppRouter />}/>
 		<Toast />
 		<DataLoading />
 	</>
 )
+
+export default Index

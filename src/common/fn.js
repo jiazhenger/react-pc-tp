@@ -4,7 +4,7 @@ import Query from './core/query'
 import Rest from './core/rest'
 import Inner from './core/inner'
 /* ====================================== 全局变量及方法  ====================================== */
-export default {
+const Index = {
 	// ======================================================================== 功能函数
 	...DataType,
 	...Storage,
@@ -101,3 +101,5 @@ export default {
 	// 刷新key
 	refresh(_this){ _this.setState({ key: (_this.state.key || 0) + 1}) },
 }
+
+export default Index

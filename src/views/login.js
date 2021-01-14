@@ -8,10 +8,12 @@ const Page = window.$async(()=>import('#tp/content/content-page'))
 // ===================================================================== declare
 
 // ===================================================================== component
-export default () => {
+const Index = () => {
 	return (
 		<Page>
 			<div>登录</div>
 		</Page>
 	)
 }
+
+export default Index
