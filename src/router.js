@@ -1,6 +1,6 @@
 /* ====================================== 模块子路由配置  ====================================== */
 import React from 'react'
-import { Route, Redirect, Switch } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 import { CacheSwitch, CacheRoute } from 'react-cache-router'
 // ===================================================================== 异步加载
 import Import from '@com/bundle'

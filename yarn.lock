@@ -1231,30 +1231,6 @@
     update-notifier "^2.2.0"
     yargs "^8.0.2"
 
-"@ionic/core@5.5.2":
-  version "5.5.2"
-  resolved "https://registry.npm.taobao.org/@ionic/core/download/@ionic/core-5.5.2.tgz#6a2107236ca69c149d55ac99a9aa0ca716e973de"
-  integrity sha1-aiEHI2ymnBSdVayZqaoMpxbpc94=
-  dependencies:
-    ionicons "^5.1.2"
-    tslib "^1.10.0"
-
-"@ionic/react-router@^5.5.2":
-  version "5.5.2"
-  resolved "https://registry.npm.taobao.org/@ionic/react-router/download/@ionic/react-router-5.5.2.tgz#93b85c69329106ff10844efb8fcc55f9059d3278"
-  integrity sha1-k7hcaTKRBv8QhE77j8xV+QWdMng=
-  dependencies:
-    tslib "*"
-
-"@ionic/react@^5.5.2":
-  version "5.5.2"
-  resolved "https://registry.npm.taobao.org/@ionic/react/download/@ionic/react-5.5.2.tgz#18dc56ec75d9dcee765c30028e265661e04a191e"
-  integrity sha1-GNxW7HXZ3O52XDACjiZWYeBKGR4=
-  dependencies:
-    "@ionic/core" "5.5.2"
-    ionicons "^5.1.2"
-    tslib "*"
-
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/@istanbuljs/load-nyc-config/download/@istanbuljs/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -6373,22 +6349,10 @@ internal-slot@^1.0.2:
     has "^1.0.3"
     side-channel "^1.0.2"
 
-invariant@^2.2.4:
-  version "2.2.4"
-  resolved "https://registry.npm.taobao.org/invariant/download/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
-  integrity sha1-YQ88ksk1nOHbYW5TgAjSP/NRWOY=
-  dependencies:
-    loose-envify "^1.0.0"
-
 invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/invert-kv/download/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
   integrity sha1-EEqOSqym09jNFXqO+L+rLXo//bY=
-
-ionicons@^5.1.2:
-  version "5.3.0"
-  resolved "https://registry.npm.taobao.org/ionicons/download/ionicons-5.3.0.tgz#06aeae29a1cedf4e0e17714104d51aef9675a7d8"
-  integrity sha1-Bq6uKaHO304OF3FBBNUa75Z1p9g=
 
 ip-regex@^2.1.0:
   version "2.1.0"
@@ -10803,13 +10767,6 @@ react-is@^17.0.1:
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-17.0.1.tgz?cache=0&sync_timestamp=1610380979729&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-is%2Fdownload%2Freact-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha1-WzUxvXamRaTJ+25pPtNkGeMwEzk=
 
-react-keepalive-router@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.npm.taobao.org/react-keepalive-router/download/react-keepalive-router-1.1.0.tgz#25a39dc774b08dd0f514fe1c44966954a5410a2c"
-  integrity sha1-JaOdx3SwjdD1FP4cRJZpVKVBCiw=
-  dependencies:
-    invariant "^2.2.4"
-
 react-refresh@^0.8.3:
   version "0.8.3"
   resolved "https://registry.npm.taobao.org/react-refresh/download/react-refresh-0.8.3.tgz?cache=0&sync_timestamp=1610381290555&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-refresh%2Fdownload%2Freact-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
@@ -12660,15 +12617,15 @@ tsconfig-paths@^3.9.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tslib@*, tslib@^2.0.3:
-  version "2.1.0"
-  resolved "https://registry.npm.taobao.org/tslib/download/tslib-2.1.0.tgz?cache=0&sync_timestamp=1609887446826&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
-  integrity sha1-2mCGDxwuyqVwOrfTm8Bba/mIuXo=
-
 tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0:
   version "1.14.1"
   resolved "https://registry.npm.taobao.org/tslib/download/tslib-1.14.1.tgz?cache=0&sync_timestamp=1609887446826&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
+
+tslib@^2.0.3:
+  version "2.1.0"
+  resolved "https://registry.npm.taobao.org/tslib/download/tslib-2.1.0.tgz?cache=0&sync_timestamp=1609887446826&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftslib%2Fdownload%2Ftslib-2.1.0.tgz#da60860f1c2ecaa5703ab7d39bc05b6bf988b97a"
+  integrity sha1-2mCGDxwuyqVwOrfTm8Bba/mIuXo=
 
 tsutils@^3.17.1:
   version "3.19.1"
