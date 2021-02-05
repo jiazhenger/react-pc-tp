@@ -1,4 +1,4 @@
-﻿/* ====================================== toast  ====================================== */
+/* ====================================== toast  ====================================== */
 import React from 'react'
 import { Upload, message, Button } from 'antd'
 import { PlusOutlined, LoadingOutlined, UploadOutlined } from '@ant-design/icons'
@@ -11,7 +11,7 @@ const { $fn } = window
 	 * @param {params} 额外参数
 	 * @param {multiple} 是否上传多个
 	 **/
-export default ({ className, title, children, fileType, mode, onChange, name, value, api, params, multiple })=> {
+const _ = ({ className, title, children, fileType, mode, onChange, name, value, api, params, multiple })=> {
 	const [ loading, setLoading ] = React.useState( false );
 	const [ img, setImg ] = React.useState();
 	// 当选择图片时
@@ -39,7 +39,7 @@ export default ({ className, title, children, fileType, mode, onChange, name, va
 	    	message.error(`${file.name} 文件上传失败!`)
 	    	setLoading(false)
 	    }
-	},[onChange,name])
+	},[onChange, name, multiple])
 	
 	React.useEffect(()=>{
 		if(value) setImg(value)
@@ -103,3 +103,4 @@ export default ({ className, title, children, fileType, mode, onChange, name, va
 		</Upload>
 	)
 }
+export default _

@@ -1,8 +1,8 @@
-﻿/* ====================================== toast  ====================================== */
+/* ====================================== toast  ====================================== */
 import React from 'react'
 import { Input } from 'antd'
 // ===================================================================== Select
-export default class Index extends React.Component {
+const _ = class Index extends React.Component {
 	state = {
 		value: this.props.value
 	}
@@ -34,3 +34,4 @@ export default class Index extends React.Component {
 		)
 	}
 }
+export default _

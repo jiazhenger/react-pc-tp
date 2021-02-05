@@ -30,7 +30,7 @@ const DialogComponent = ({ show, dir, children, onClick, fullScreen}) => {
 	)
 }
 // =====================================================================
-export default class extends React.Component{
+class Index extends React.Component{
 	state = {
 		show:false
 	}
@@ -46,3 +46,4 @@ export default class extends React.Component{
 		)
 	}
 }
+export default Index

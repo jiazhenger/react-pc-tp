@@ -5,8 +5,10 @@ import {Dialog,DialogActions,DialogContent,DialogContentText, DialogTitle} from 
 import Dialog from '@cpt/material/dialog'
 // ===================================================================== private
 // =====================================================================
-export default ({ yes, no }) => (
+const _ = ({ yes, no }) => (
 	<Dialog>
 		
 	</Dialog>
 )
+
+export default _

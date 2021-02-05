@@ -1,6 +1,6 @@
 /* ====================================== sessionStorage 本地存储  ====================================== */
 import $fn from '@com/fn'
-export default {
+const Index = {
 	// 设置 cookie
 	set(name, value, days){
 		let day = days || 0;
@@ -36,3 +36,4 @@ export default {
 	// 删除 cookie
 	remove(name){ this.setCookie(name, ' ', -1) },
 }
+export default Index

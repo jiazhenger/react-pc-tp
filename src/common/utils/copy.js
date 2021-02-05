@@ -1,6 +1,7 @@
 import { message } from 'antd'
-export default (el,content) => {
+const Index = (el,content) => {
 	el.select()
 	document.execCommand('copy')
 	message.success('¸´ÖÆ³É¹¦')
 }
+export default Index

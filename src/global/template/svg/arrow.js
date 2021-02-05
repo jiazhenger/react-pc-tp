@@ -1,7 +1,7 @@
-﻿/* ====================================== toast  ====================================== */
+/* ====================================== toast  ====================================== */
 import React from 'react'
 // ===================================================================== 
-export default ({ width,height, color })=>(
+const _ = ({ width,height, color })=>(
 	<svg width={width || '10px'} height={height||'15px'} viewBox='0 0 10 18'>
 	    <desc>Created with Sketch.</desc>
 	    <defs></defs>
@@ -10,3 +10,4 @@ export default ({ width,height, color })=>(
 	    </g>
 	</svg>
 )
+export default _

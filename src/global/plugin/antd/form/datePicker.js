@@ -9,7 +9,7 @@ moment.locale('zh-cn')
 // ===================================================================== declare
 const { $fn } = window
 // ===================================================================== DatePicker
-export default class extends React.Component{
+class Index extends React.Component{
 	state = {}
 	
 	onChange = value => {
@@ -86,3 +86,5 @@ export default class extends React.Component{
 		)
 	}
 }
+
+export default Index

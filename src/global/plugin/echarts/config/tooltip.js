@@ -1,4 +1,4 @@
-﻿export default (option)=>{
+const _ = (option)=>{
 	return {
 		backgroundColor:'rgba(255,255,255,.9)',	// 背景颜色
 		borderColor:'#E5E9F2',	// 边框颜色
@@ -12,3 +12,4 @@
 		...option
 	}
 }
+export default _

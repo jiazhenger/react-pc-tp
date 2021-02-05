@@ -8,7 +8,7 @@ const Wrap = props => (
 		<FormControls {...props} />
 	</div>
 )
-export default class FormControls extends React.Component{
+class FormControls extends React.Component{
 	static Wrap = Wrap
 	
 	
@@ -22,3 +22,4 @@ export default class FormControls extends React.Component{
 		)
 	}
 }
+export default FormControls

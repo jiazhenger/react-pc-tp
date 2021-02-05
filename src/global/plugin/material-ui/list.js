@@ -15,7 +15,7 @@ const ListItemIconStyle = makeStyles({
 	}
 })
 // =====================================================================
-export default props => {
+const Index = props => {
 	const { label, icon, img, dividerNo, dividerFull, onClick, push, replace } = props
 	
 	let click = onClick
@@ -41,3 +41,4 @@ export default props => {
 		</>
 	)
 }
+export default Index

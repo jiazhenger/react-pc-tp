@@ -4,10 +4,10 @@ import { Button } from '@material-ui/core'
 // =====================================================================
 const Wrap = props => (
 	<div className={`${props.className?props.className:''} fxc`}>
-		<Buttons {...props} />
+		<MyButton {...props} />
 	</div>
 )
-export default class Buttons extends React.Component{
+class MyButton extends React.Component{
 	static Wrap = Wrap
 	render(){
 		const { type, label, onClick, children, loading, color, disabled, auto, size, variant, width, round, style, replace, push } = this.props
@@ -43,3 +43,4 @@ export default class Buttons extends React.Component{
 		)
 	}
 }
+export default MyButton

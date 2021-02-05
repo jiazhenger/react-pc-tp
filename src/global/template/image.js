@@ -3,7 +3,7 @@ import React from 'react'
 // ===================================================================== image
 import DefImage from './svg/def-img'
 // ===================================================================== 
-export default ({ src, width, height, style, className, onClick, alt, round, size, wrap }) => {
+const _ = ({ src, width, height, style, className, onClick, alt, round, size, wrap }) => {
 	const _width = size ? size : width
 	const _height = size ? size : height
 	const wrapStyle = {width:_width,height:_height,...style}
@@ -18,3 +18,5 @@ export default ({ src, width, height, style, className, onClick, alt, round, siz
 	}
 	return src ? img : <DefImage size={size||width} />
 }
+
+export default _

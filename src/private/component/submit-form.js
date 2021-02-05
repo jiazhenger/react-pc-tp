@@ -76,7 +76,6 @@ const FormComponent = ({ data, onChange, width, form, mb, readOnly, disabled, no
 
 const SubmitForm = ({ children, data, onChange, onSubmit, onClose, init, btnSize, okText, modal, layout, display, width, className, scrollClassName, mb, readOnly, disabled, noholder }) => {
 	const [ form, setForm ] = React.useState()
-	const [key, setKey] = React.useState(0)
 	
 	const _init = React.useCallback( v => {
 		setForm(v)
@@ -85,12 +84,11 @@ const SubmitForm = ({ children, data, onChange, onSubmit, onClose, init, btnSize
 				v.setFieldsValue({ [m.name] : m.value })
 			}
 		})
-		setTimeout(() => { setKey(key + 1) }, 100);
 		init && init(v)
 	},[data, init])
 	
 	return (
-		<Form layout={layout} onSubmit={onSubmit} init={_init} className={`submit-form small-form fv ex ${className||''}`} key={key}>
+		<Form layout={layout} onSubmit={onSubmit} init={_init} className={`submit-form small-form fv ex ${className||''}`}>
 			<div className='ex rel'>
 				<div className={` ${scrollClassName||''} ${modal?'':'abs_full oys scrollbar'}`}>
 					<div className={layout === 'horizontal' ? 'fxw' : ''}>
@@ -108,7 +106,7 @@ const SubmitForm = ({ children, data, onChange, onSubmit, onClose, init, btnSize
 	)
 }
 
-export default class extends React.Component {
+class Index extends React.Component {
     state = {
        
     }
@@ -151,3 +149,4 @@ export default class extends React.Component {
 		)
 	}
 }
+export default Index

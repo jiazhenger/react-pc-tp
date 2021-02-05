@@ -7,10 +7,10 @@ const { $fn } = window
 // =====================================================================
 const Wrap = props => (
 	<div className={props.className?props.className:''}>
-		<Selects {...props} />
+		<MySelect {...props} />
 	</div>
 )
-export default class Selects extends React.Component{
+class MySelect extends React.Component{
 	static Wrap = Wrap
 	
 	state={
@@ -70,3 +70,4 @@ export default class Selects extends React.Component{
 		)
 	}
 }
+export default MySelect

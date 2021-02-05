@@ -1,8 +1,8 @@
-﻿/* ====================================== toast  ====================================== */
+/* ====================================== toast  ====================================== */
 import React from 'react'
 import { Card, Empty } from 'antd'
 // ===================================================================== 
-export default ({ className, title, children, size, hover })=> {
+const _ = ({ className, title, children, size, hover })=> {
 	return <div className={className}>
 		<Card title={title} bordered={false} size={size} style={{borderRadius:'6px',color:'#333'}} hoverable={ hover === false ? false : true}>
 			{
@@ -11,3 +11,4 @@ export default ({ className, title, children, size, hover })=> {
 		</Card>
 	</div>
 }
+export default _

@@ -7,7 +7,7 @@ const formatNumber = function(n) {
 const join = function(arr,split){
 	return arr.map(formatNumber).join(split)
 }
-export default {
+const Index = {
 	full: function(time){
 		var date = new Date(time);
 	    return {
@@ -59,3 +59,4 @@ export default {
 		return time ? new Date(time).getTime() :  new Date().getTime()
 	}
 }
+export default Index

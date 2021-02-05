@@ -2,8 +2,7 @@
 import React from 'react'
 import { Input } from 'antd'
 // ===================================================================== Select
-
-export default class extends React.Component {
+class Index extends React.Component {
 	state = { }
 
 	onChange = e => {
@@ -25,7 +24,7 @@ export default class extends React.Component {
 	
 	clear = () => this.setValue('')
 	
-	getRef = () => this.refs.inputRef.input
+	getRef = () => this.inputRef.input
 	
 	render(){
 		const  { p, type, width, size, clear, style, isCenter, readOnly, className, mode, disabled, prefix, suffix, iconRender, bordered, value, rows, onPressEnter, maxLength } = this.props
@@ -42,7 +41,7 @@ export default class extends React.Component {
 		_value = _value ? _value.trim() : _value
 		return (
 			<MyInput
-				ref 			= 'inputRef'
+				ref 			= { ref => this.inputRef = ref }
 				className		= { `${className?className:''} ${borderClass||''}` }
 				allowClear 		= { clear === false ? false : true } 
 				type			= { type } 
@@ -64,3 +63,4 @@ export default class extends React.Component {
 		)
 	}
 }
+export default Index

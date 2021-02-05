@@ -4,7 +4,7 @@ const { $async } = window
 const Page = $async(()=>import('#tp/content/content-aside'))
 const Wraper = $async(()=>import('#tp/box/wraper'))
 // =====================================================================
-export default ({ children}) => {
+const Index = ({ children}) => {
 	return (
 		<Page>
 			<Wraper>
@@ -13,3 +13,5 @@ export default ({ children}) => {
 		</Page>
 	)
 }
+
+export default Index

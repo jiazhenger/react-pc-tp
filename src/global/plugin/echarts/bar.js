@@ -1,5 +1,5 @@
-﻿import Tooltip from './config/tooltip'
-export default (option)=>{
+import Tooltip from './config/tooltip'
+const _ = (option)=>{
 	const opt = {
 		data:[], 		// y轴数字
 		xdata:[],		// x轴名称
@@ -77,3 +77,4 @@ export default (option)=>{
 	    ]
 	}
 }
+export default _

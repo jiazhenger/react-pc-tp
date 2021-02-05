@@ -1,6 +1,6 @@
-﻿import React from 'react'
+import React from 'react'
 // ===================================================================== 关闭按钮
-export default ({ color }) => (
+const _ = ({ color }) => (
 	<svg>
     	<path fill={color||windw.$fn.c0} d='M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50'>
 	      	<animateTransform 
@@ -15,3 +15,4 @@ export default ({ color }) => (
 	  	</path>
     </svg>
 )
+export default _

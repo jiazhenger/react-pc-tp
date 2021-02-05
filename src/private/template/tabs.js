@@ -5,7 +5,7 @@ import { Tabs, Pane } from '@antd/tabs'
 const { $fn, $async } = window
 // ===================================================================== global template
 // ===================================================================== component
-export default ({ children, data, onTabs }) => {
+const Index = ({ children, data, onTabs }) => {
 	const onChange = React.useCallback( index =>{
 		const _data = data[index]
 		onTabs && onTabs(_data, index)
@@ -20,3 +20,4 @@ export default ({ children, data, onTabs }) => {
 		</div>
 	)
 }
+export default Index

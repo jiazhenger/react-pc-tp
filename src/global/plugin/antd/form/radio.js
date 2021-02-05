@@ -1,9 +1,9 @@
-﻿/* ====================================== toast  ====================================== */
+/* ====================================== toast  ====================================== */
 import React from 'react'
 import { Radio, Form } from 'antd'
 const $fn = window.$fn
 // ===================================================================== Radio
-export default ({ data, nameStr, name, value, onChange, onClick, dicId, size, optionType }) => {
+const _ = ({ data, nameStr, name, value, onChange, onClick, dicId, size, optionType }) => {
 	let nStr = nameStr || 'codeName'
 	let optType = optionType || 'button'
 	const [ xdata, setData ] = React.useState(data||[])
@@ -27,3 +27,4 @@ export default ({ data, nameStr, name, value, onChange, onClick, dicId, size, op
 		</Form.Item>
 	)
 }
+export default _

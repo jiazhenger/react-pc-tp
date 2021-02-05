@@ -3,7 +3,7 @@ import React from 'react'
 import { Modal } from 'antd'
 import Button from '@antd/button'
 // ===================================================================== 选择字典表数据
-export default class extends React.Component {
+class Index extends React.Component {
     state = {
        
     }
@@ -65,3 +65,4 @@ export default class extends React.Component {
 		)
     }
 }
+export default Index

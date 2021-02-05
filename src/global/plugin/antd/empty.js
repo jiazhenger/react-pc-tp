@@ -2,7 +2,7 @@
 import React from 'react'
 import { Empty } from 'antd'
 // ===================================================================== 
-export default ({ data, text, image, loading, className, simple }) => {
+const _ = ({ data, text, image, loading, className, simple }) => {
 	const _image = simple ? Empty.PRESENTED_IMAGE_SIMPLE : Empty.PRESENTED_IMAGE_DEFAULT
 	return (
 		data.length === 0 ? (
@@ -12,3 +12,4 @@ export default ({ data, text, image, loading, className, simple }) => {
 		) : null
 	)
 }
+export default _

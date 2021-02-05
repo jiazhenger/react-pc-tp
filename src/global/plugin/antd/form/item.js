@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form } from 'antd'
 // ===================================================================== 按钮集合
-export default ({ children, name, label, className, rules, mt, ml, mr, mb, full, width}) => (
+const _ = ({ children, name, label, className, rules, mt, ml, mr, mb, full, width}) => (
 	<Form.Item 
 		name	= { name }
 		label	= { label } 
@@ -12,3 +12,5 @@ export default ({ children, name, label, className, rules, mt, ml, mr, mb, full,
 		{ children }
 	</Form.Item>
 )
+
+export default _

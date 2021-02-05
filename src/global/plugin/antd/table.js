@@ -1,10 +1,10 @@
-﻿/* ====================================== toast  ====================================== */
+/* ====================================== toast  ====================================== */
 import React from 'react'
 import { Table, Pagination } from 'antd'
 
 const { $fn } = window
 // ===================================================================== 
-export default ({ col, data, loading, pag, onChange, onSizeChange, noPag, className, size, expandedRowRender, expandRowByClick, onExpand })=> {
+const _ = ({ col, data, loading, pag, onChange, onSizeChange, noPag, className, size, expandedRowRender, expandRowByClick, onExpand })=> {
 	const p = { current:1, total:0, pageSize:10, ...pag}
 	return <>
 		<Table 
@@ -38,3 +38,4 @@ export default ({ col, data, loading, pag, onChange, onSizeChange, noPag, classN
 		}
 	</>
 }
+export default _

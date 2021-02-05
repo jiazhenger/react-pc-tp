@@ -1,9 +1,8 @@
 /* ====================================== toast  ====================================== */
 import React from 'react'
 import { Pagination } from 'antd'
-const { $fn } = window
 // ===================================================================== Select
-export default ({ pag, onChange, style, otherInfo })=>(
+const _ = ({ pag, onChange, style, otherInfo })=>(
 	<div className='fxj tbor1' style={{padding:'10px 0', ...style}}>
 		<div className='g6 fxc'>
 			<div>共 {pag.total} 条数据</div>
@@ -25,3 +24,4 @@ export default ({ pag, onChange, style, otherInfo })=>(
 		/>
 	</div>
 )
+export default _

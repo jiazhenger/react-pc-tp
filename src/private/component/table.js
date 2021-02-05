@@ -149,7 +149,7 @@ const Table = ({ cols, data, className, width, style, pag, onChange, loading, so
 				dragRef.current.style.display = 'none'
 			}
 		}
-	},[data,selectedKeys,disabledKeys, cols, move])
+	},[data,selectedKeys,disabledKeys, cols, move, idStr])
 	// 排序
 	const _onSort = React.useCallback(v=>{
 		let type = null
@@ -361,7 +361,7 @@ const Table = ({ cols, data, className, width, style, pag, onChange, loading, so
 		</div>
 	)
 }
-export default class extends React.Component{
+class Index extends React.Component{
 	componentWillUnmount(){
 		window.onmouseup = null
 		window.onresize = null
@@ -388,3 +388,4 @@ export default class extends React.Component{
 		/>
 	}
 }
+export default Index

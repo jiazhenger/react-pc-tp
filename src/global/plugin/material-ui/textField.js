@@ -10,7 +10,7 @@ const Wrap = props => (
 		<TextFields {...props} />
 	</div>
 )
-export default class TextFields extends React.Component{
+class TextFields extends React.Component{
 	static Wrap = Wrap
 	
 	state={
@@ -60,3 +60,4 @@ export default class TextFields extends React.Component{
 		)
 	}
 }
+export default TextFields

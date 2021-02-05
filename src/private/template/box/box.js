@@ -4,7 +4,7 @@ const { $fn, $async } = window
 const Title = $async(()=>import('#tp/title'))
 const Button = $async(()=>import('@antd/button'))
 // =====================================================================
-export default ({ children, className, title, ButtonGroup, style, titleChildren, onSetHeader }) => {
+const Index = ({ children, className, title, ButtonGroup, style, titleChildren, onSetHeader }) => {
 	return (
 		<div className={`bcf r5px ${className||''}`} style={style}>
 			{
@@ -22,3 +22,4 @@ export default ({ children, className, title, ButtonGroup, style, titleChildren,
 		</div>
 	)
 }
+export default Index

@@ -6,7 +6,7 @@ import Import from '@com/bundle'
 
 const { $fn } = window
 // ===================================================================== 同步路由
-export default ({ data }) => {
+const Index = ({ data }) => {
 	const { path, root, to, component } = data[0]
 	const _to = to ? to : path
 	return (
@@ -66,3 +66,4 @@ export default ({ data }) => {
 		</Switch>
 	)
 }
+export default Index

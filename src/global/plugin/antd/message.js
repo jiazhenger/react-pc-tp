@@ -2,7 +2,7 @@
 import { message } from 'antd'
 // ===================================================================== Select
 message.config({ top: '40%', duration:0.5 })
-export default {
+const _ = {
 	success(msg){
 		message.success(msg)
 	},
@@ -22,3 +22,4 @@ export default {
 		message.loading(msg)
 	},
 }
+export default _

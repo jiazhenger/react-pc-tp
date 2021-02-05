@@ -3,7 +3,7 @@ import React from 'react'
 const { $fn, $async } = window
 const Box = $async(()=>import('#tp/box/box'))
 // =====================================================================
-export default ({ children, scrollClassName, className, title, ButtonGroup, style, titleChildren, onSetHeader }) => {
+const Index = ({ children, scrollClassName, className, title, ButtonGroup, style, titleChildren, onSetHeader }) => {
 	return (
 		<Box
 			className	= {`fv ${className||''}`} 
@@ -19,3 +19,4 @@ export default ({ children, scrollClassName, className, title, ButtonGroup, styl
 		</Box>
 	)
 }
+export default Index

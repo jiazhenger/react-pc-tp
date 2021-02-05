@@ -2,7 +2,7 @@
 import React from 'react'
 import { Checkbox } from 'antd'
 // ===================================================================== Select
-export default class Index extends React.Component {
+class Index extends React.Component {
 	state = {
 		
 	}
@@ -40,3 +40,4 @@ export default class Index extends React.Component {
 		)
 	}
 }
+export default Index

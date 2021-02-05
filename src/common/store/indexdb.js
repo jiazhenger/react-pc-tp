@@ -29,7 +29,7 @@ const DB = ()=> {
     })
 }
 // ======================================================================================= service
-export default {
+const Index = {
 	// ====================================== 保存数据，
 	// 如果不存在则添加，如果存在则覆盖，
 	// 即可添加字符串，也可添加对象
@@ -74,3 +74,4 @@ export default {
 		window.indexedDB.deleteDatabase(dbName)
 	}
 }
+export default Index

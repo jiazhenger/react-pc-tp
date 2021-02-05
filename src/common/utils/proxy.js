@@ -1,6 +1,6 @@
 // eventProxy.js
 //'use strict';
-export default {
+const Index = {
 	Class: {},
 	on(key, fn) {
 		if(this.Class[key] === undefined) {
@@ -33,3 +33,4 @@ export default {
 		this.publish('refresh')
 	}
 }
+export default Index

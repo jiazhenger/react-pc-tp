@@ -1,4 +1,4 @@
-export default (arr,key) => {
+const Index = (arr,key) => {
 	let result = []
 	let obj = {}
 	arr.forEach(function(v){
@@ -9,3 +9,4 @@ export default (arr,key) => {
 	})
 	return result
 }
+export default Index

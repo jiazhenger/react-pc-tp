@@ -3,7 +3,7 @@ import React from 'react'
 import { Select } from 'antd'
 const { $fn } = window
 // ===================================================================== 
-export default class Index extends React.Component {
+class Index extends React.Component {
 	state = {
 		data:[],
 	}
@@ -95,3 +95,4 @@ export default class Index extends React.Component {
 		)
 	}
 }
+export default Index

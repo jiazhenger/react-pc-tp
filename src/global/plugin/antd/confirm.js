@@ -3,7 +3,7 @@ import React from 'react'
 import { Modal } from 'antd'
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 // ===================================================================== 选择字典表数据
-export default ({ msg, okText, cancelText, onOk, onCancel  }) => {
+const _ = ({ msg, okText, cancelText, onOk, onCancel  }) => {
 	return Modal.confirm({
 		title: '提示',
 		icon: <ExclamationCircleOutlined />,
@@ -19,3 +19,4 @@ export default ({ msg, okText, cancelText, onOk, onCancel  }) => {
 		}
 	});
 }
+export default _

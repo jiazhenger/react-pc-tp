@@ -12,7 +12,7 @@ const Loading = ({ color, size }) => (
 	</svg>
 )
 
-const Index = () => (
+const _ = () => (
 	<AddLast name='data-loading'>
 		<div id='jzer-loading' className='fix_lt wh tc dn' style={{zIndex:1999}}>
 			<div className='fxmc wh'>
@@ -25,4 +25,4 @@ const Index = () => (
 	</AddLast>
 )
 
-export default Index
+export default _

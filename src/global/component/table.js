@@ -1,8 +1,8 @@
-﻿/* ====================================== toast  ====================================== */
+/* ====================================== toast  ====================================== */
 import React from 'react'
 // ===================================================================== 
 const $fn = window.$fn
-export default ({ columns, data, className, width, style }) => (
+const _ = ({ columns, data, className, width, style }) => (
 	<div className={`ub-table ${className||''}`} style={style}>
 		{
 			$fn.hasArray(columns) ? [
@@ -52,3 +52,4 @@ export default ({ columns, data, className, width, style }) => (
 		}
 	</div>
 )
+export default

@@ -103,7 +103,7 @@ const SearchForm = ({ children, data, onChange, loading, onSubmit, onAdd, onRese
 	)
 }
 
-export default class extends React.Component{
+class Index extends React.Component{
 	componentWillUnmount(){
 		window.onkeydown = null
 	}
@@ -126,3 +126,4 @@ export default class extends React.Component{
 		)
 	}
 }
+export default Index

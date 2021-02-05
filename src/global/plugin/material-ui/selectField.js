@@ -8,7 +8,7 @@ const Wrap = props => (
 		<SelectField {...props} />
 	</div>
 )
-export default class SelectField extends React.Component{
+class SelectField extends React.Component{
 	static Wrap = Wrap
 	
 	componentDidMount(){
@@ -44,3 +44,4 @@ export default class SelectField extends React.Component{
 		)
 	}
 }
+export default SelectField
