@@ -3,7 +3,7 @@ import React from 'react'
 import { Radio, Form } from 'antd'
 const $fn = window.$fn
 // ===================================================================== Radio
-const _ = ({ data, nameStr, name, value, onChange, onClick, dicId, size, optionType }) => {
+const _ = ({ data, nameStr, name, value, onChange, onChanged, onClick, dicId, size, optionType }) => {
 	let nStr = nameStr || 'codeName'
 	let optType = optionType || 'button'
 	const [ xdata, setData ] = React.useState(data||[])
@@ -14,9 +14,16 @@ const _ = ({ data, nameStr, name, value, onChange, onClick, dicId, size, optionT
 			})
 		}
 	},[ dicId ])
+	
+	const _onChange = React.useCallback( value => {
+		const model = name ? { [name]: value } : value
+		onChanged && onChanged({ model, value })
+		onChange && onChange(value)
+	},[onChange, onChanged, name])
+	
 	return (
 		<Form.Item name={name}>
-			<Radio.Group size={size} value={value} onChange={onChange?onChange:()=>{}} >
+			<Radio.Group size={size} value={value} onChange={_onChange} >
 				{
 					optType === 'button' && xdata.map((v, i) => <Radio.Button key={i} onClick={()=>{onClick&&onClick(i)}} value={v.id} style={{ marginRight: '20px', lineHeight: '30px' }}>{v[nStr]}</Radio.Button>)
 				}

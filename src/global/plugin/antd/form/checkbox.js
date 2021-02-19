@@ -7,10 +7,12 @@ class Index extends React.Component {
 		
 	}
 	onChange = e => {
-		const { onChange, name } = this.props
+		const { onChange, onChanged, name } = this.props
 		this.setState({ value: e.target.checked }, ()=>{
-			let rs = this.state.value ? true : false
-			onChange && onChange( name ? { [name]: rs } : rs )
+			const value = this.state.value ? true : false
+			const model = name ? { [name]: value } : value
+			onChanged && onChanged({ model, value, name } )
+			onChange && onChange(value)
 		})
 	}
 	

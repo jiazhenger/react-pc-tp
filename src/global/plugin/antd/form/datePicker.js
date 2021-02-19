@@ -13,28 +13,30 @@ class Index extends React.Component{
 	state = {}
 	
 	onChange = value => {
-		const { onChange, name, range, format } = this.props
+		const { onChange, onChanged, name, range, format } = this.props
 		const formatType = format === 1 ? 'ymd' : 'full'
 		
 		const $format = value => $time.format(value, { t: formatType }) 	// 将时间格式化为字符串
 		
 		this.setState({ value },()=>{
-			let param = null
+			let model = null
 			if(range){
+				let start = null
+				let end = null
 				if($fn.isArray(value)){
-					let start = $format(value[0])
-					let end = $format(value[1])
-					param = $fn.isArray(name) ? { [name[0]]:start, [name[1]]: end } : { start, end }
+					start = $format(value[0])
+					end = $format(value[1])
+					model = $fn.isArray(name) ? { [name[0]]:start, [name[1]]: end } : { start, end }
 				}else{
-					param = $fn.isArray(name) ? { [name[0]]:null, [name[1]]: null } : { start:null, end:null }
+					model = $fn.isArray(name) ? { [name[0]]:null, [name[1]]: null } : { start:null, end:null }
 				}
+				onChanged && onChanged({ model, start, end, name })
+				onChange && onChange([start, end])
 			}else{
 				let time = $format(value)
-				param = name ? { [name]: time } : time
-			}
-			if(onChange){
-				
-				onChange(param)
+				model = name ? { [name]: time } : time
+				onChanged && onChanged({ model, value: time, name })
+				onChange && onChange(time)
 			}
 		})
 	}

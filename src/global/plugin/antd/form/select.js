@@ -8,12 +8,19 @@ class Index extends React.Component {
 		data:[],
 	}
 	
-	onChange = (value, data) => {
-		const { name, onChanged } = this.props
+	_onChange = (value, option) => {
+		const { name, onChanged, onChange, idStr, data } = this.props
 		const v = $fn.isEmpty(value) ? '' : value
 		this.setState({ v },()=>{
-			const obj = name ? { [name]: v } : v
-			onChanged && onChanged(obj , data, name)
+			let model = name ? { [name]: v } : v
+			let rows = null
+			
+			const arr = data.filter( rows => rows[idStr || 'value'] === v)
+			
+			if ($fn.hasArray(arr)) { rows = arr[0] }
+			
+			onChanged && onChanged({ model, value:v, option, rows, name })
+			onChange && onChange(v)
 		})
 	}
 	
@@ -42,7 +49,7 @@ class Index extends React.Component {
 	render(){
 		const { data, value, idStr, nameStr, p , width, size, style,isP, className, mode, disabled, loading, bordered, auto, noClear } = this.props
 		const { key } = this.state
-		const xdata = data || this.state.data
+		const _data = data || this.state.data
 		const nStr = nameStr || 'name'
 		const iStr = idStr || 'value'
 		const t = p ? p : ''
@@ -55,12 +62,12 @@ class Index extends React.Component {
 			<Select 
 				key 		= { key }
 				size		= { _size } 
-				onChange	= { this.onChange } 
+				onSelect	= { this._onChange } 
 				style		= {{ width,...style }} 
 				value 		= { _value }
 				className 	= {`${className?className:'w'} ${bordered===false ? 'input-bordered':''}`}
 				placeholder	= { isP ? '请选择' + t :  t  }
-				disabled 	= { !$fn.hasArray(xdata) || disabled }
+				disabled 	= { !$fn.hasArray(_data) || disabled }
 				mode		= { mode }
 				loading		= { loading }
 				bordered	= { borderedValue }
@@ -75,7 +82,7 @@ class Index extends React.Component {
 				dropdownRender = {menu => this.dropdownRender(menu)}
 			>
 				{
-					$fn.hasArray(xdata) && xdata.map((v,i)=>{
+					$fn.hasArray(_data) && _data.map((v,i)=>{
 						return (
 							<React.Fragment key={i}> 
 								{

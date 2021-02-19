@@ -16,14 +16,16 @@ class Index extends React.Component {
 	}
 	componentDidMount(){
 		window.addEventListener('keydown',this.enter)
+		this.props.onRef && this.props.onRef(this)
 	}
 	componentWillUnmount(){
 		window.removeEventListener('keydown',this.enter)
 	}
     
     onOk = () => {
-    	const { onOk } = this.props
+    	const { onOk, form } = this.props
     	onOk && onOk()
+		form && form.submit()
     }
     
     onCancel = () => {
@@ -37,16 +39,17 @@ class Index extends React.Component {
     
     Footer = ({ okText, noText, loading }) => (
     	<footer className='fxmc'>
-			<Button round loading={loading} onClick={this.onCancel} style={{width:'100px'}} size='large' ghost type='primary'>{noText||'取消'}</Button>
-			<Button round loading={loading} onClick={this.onOk} style={{width:'100px', marginLeft:'25px'}} size='large' type='primary'>{okText || '确认 Enter'}</Button>
+			<Button loading={loading} onClick={this.onCancel} style={{width:'100px'}} size='middel' ghost type='primary'>{noText||'取消'}</Button>
+			<Button loading={loading} onClick={this.onOk} style={{width:'100px', marginLeft:'25px'}} size='middel' type='primary'>{okText || '确认 Enter'}</Button>
     	</footer>
     )
     
     render(){
-    	const { title, children, width, noFooter, centered, onClose, bodyStyle } = this.props
+    	const { title, children, width, noFooter, centered, onClose, bodyStyle, isFullScroll, form } = this.props
     	const visible = this.state.show === undefined ? this.props.show : this.state.show
     	return (
 			<Modal
+				className 		= {isFullScroll ? 'full-scroll-modal' : ''}
 				title			= { title || '提示' }
 				width			= { width }
 				visible 		= { visible }
@@ -56,11 +59,14 @@ class Index extends React.Component {
 				centered		= { centered===undefined ? true : centered }
 				footer			= { noFooter ? null : <this.Footer {...this.props} /> }
 				destroyOnClose 	= { true }
-				afterClose 		= { onClose }
-				bodyStyle 		= { bodyStyle }
+				afterClose 		= { ()=>{
+					onClose && onClose()
+					form && form.reset()
+				} }
+				bodyStyle 		= { { padding:'15px 20px 20px 20px', ...bodyStyle } }
 				forceRender		= { true }
 			>
-				{ children }
+				{children}
 			</Modal>
 		)
     }
