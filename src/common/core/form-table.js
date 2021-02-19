@@ -1,7 +1,7 @@
 /* ======================================  表单搜索、表格展示数据、分页  ====================================== */
 const _ = {
 	fetch(api, param){
-		window.$http.paging(this,api,{ param:{...param, ...this.model }, loading:false } )
+		return window.$http.paging(this,api,{ param:{...param, ...this.model }, loading:false } )
 	},
 	onChange(v, press){
 		let value = null

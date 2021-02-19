@@ -1,5 +1,5 @@
 {
-  "name": "react-my",
+  "name": "react-new-lis",
   "version": "0.1.0",
   "private": true,
   "homepage": "./",
@@ -10,8 +10,10 @@
     "react": "^17.0.1",
     "react-cache-router": "^1.1.0",
     "react-dom": "^17.0.1",
+    "react-resizable": "^1.11.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
+    "virtuallist-antd": "^0.5.2",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

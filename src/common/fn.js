@@ -3,17 +3,18 @@ import Storage from './core/storage'
 import Query from './core/query'
 import Rest from './core/rest'
 import Inner from './core/inner'
+import FormTable from './core/form-table'
 /* ====================================== 全局变量及方法  ====================================== */
-const Index = {
+const _ = {
 	// ======================================================================== 功能函数
 	...DataType,
 	...Storage,
 	...Query,
 	...Rest,
 	...Inner,
+	...FormTable,
 	// ======================================================================== 全局变量
-	c0:'#1890ff',
-	c1:'#FF5218',
+	c0:'#32B5CB',
 	// ======================================================================== 正则匹配
 	//	isTel(v){ return /^1[0-9]{10}$/.test(v) },
 	//	isPwd(v){ return /\w{6,18}$/.test(v) },
@@ -23,83 +24,60 @@ const Index = {
 	//	isCard(v){ return true},
 	//	isEmail(v){ return /^([0-9A-Za-z\-_]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/g.test(v) },
 	//	isInt(v){ return /^[1-9]\d*$/.test(v) }, // 整数
-	// ======================================================================== 数据处理
-	// 处理 DatePicker 的 RangePicker 获取的时间
-	getRange(data,t){
-		if(this.hasArray(data)){
-			return {
-				sdate: this.format(data[0],{t}),
-				edate: this.format(data[1],{t}),
-			}
-		}else{
-			return {
-				start:null,
-				end:null
-			}
-		}
-	},
-	// 处理 DatePicker 获取的单个时间
-	getDate(data,t){
-		return data ? this.format(data[0],{t}) : null
-	},
-	// 将无效数据剔除
-	getBody(data){
-		for(var i in data){
-			let v = data[i]
-			if( !this.isValid(v) ){
-				delete data[i]
-			}
-		}
-		return data
-	},
-	// 给 data 添加 key
-	addKey(data,format){
-		const { page } = data
-		const pageSize = page.showCount
-		const current = page.currentPage
-		const rows = data.data
-		
-		const num = pageSize*(current -1) + 1;
-		if(this.hasArray(rows)){
-			rows.forEach((v,i)=>{ 
-				rows[i]['key'] = num + i;
-				// 格式化时间
-				if(this.hasObject(format)){
-					format.f.forEach((m,k)=>{
-						v[m + 'Str'] = this.format(v[m],{t:format.t})
-					})
-				}
-			})
-		}
-		return rows;
-	},
-	addKeys(rows,format){
-		if(this.hasArray(rows)){
-			rows.forEach((v,i)=>{ 
-				rows[i]['key'] = i + 1;
-				// 格式化时间
-				if(this.hasObject(format)){
-					format.f.forEach((m,k)=>{
-						v[m + 'Str'] = this.format(v[m],{t:format.t})
-					})
-				}
-			})
-		}else if(this.hasObject(rows)){
-			Object.keys(rows).forEach((v,i)=>{
-				// 格式化时间
-				if(this.hasObject(format)){
-					format.f.forEach((m,k)=>{
-						rows[m + 'Str'] = this.format(rows[m],{t:format.t})
-					})
-				}
-			})
-		}
-	},
-	render(){ return { render: t => this.val(t) } },
-	keyConfig:{ className:'keyStyle', 	align:'center' },
-	colConfig:{ className:'rowStyle', 	align:'center' },
 	// 刷新key
 	refresh(_this){ _this.setState({ key: (_this.state.key || 0) + 1}) },
+	// 储存与获取数据
+	getData(_this, api, {dataName = 'data',loadingTxt='loading'}){
+		const { $fn, $http } = window
+		const data = $fn.local(api)
+		if ($fn.hasArray(data)) {
+			_this.setState({ [dataName]:data, [loadingTxt]:false })
+		} else {
+		    $http.submit(null, api).then(data => {
+		        _this.setState({ [dataName]:data, [loadingTxt]:false })
+				$fn.local(api,data)
+		    })
+		}
+	},
+	// 获取下拉框数据
+	async getSelect(api){
+		const { $fn, $http } = window
+		const data = $fn.local(api)
+		if ($fn.hasArray(data)) {
+			return data
+		} else {
+		    return await $http.pull(null, api).then(data => {
+				$fn.local(api,data)
+				return data;
+		    })
+		}
+	},
+	// 将下拉框数据赋给 submit 数据
+	setSubmitSelect(name, submit, data ){
+		const rows = submit.filter(v => v.name === name)
+		if(this.hasArray(rows)){ rows[0]['data'] = data }
+	},
+	// 修改回显
+	// setFormFields(submit, data) {
+	// 	submit.forEach(v => {
+	// 		for (let i in data) {
+	// 			if (i === v.name) {
+	// 				v.value = data[i]
+	// 			}
+	// 		}
+	// 	})
+	// 	return submit
+	// },
+	// 获取提交数据
+	getSubmit(submit){
+		const param = {}
+		submit.forEach(v=> param[v.name] = this.isValid(v.value) ? v.value : '' )
+		return param
+	},
+	// 刷新路由
+	refreshRouter(){
+		window.proxy.refresh()
+	},
 }
 
-export default Index
+export default _
